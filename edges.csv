@@ -1,4 +1,4 @@
-i,j,weight
+source_id,target_id,weight
 User 1,User 16,2.3615756862102932
 User 1,User 19,2.3615756862102932
 User 1,User 26,0.8835294691690923
