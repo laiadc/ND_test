@@ -445,6 +445,25 @@ export default function NeurodiversityMapMockup() {
       <div className="max-w-[1400px] mx-auto grid grid-cols-1 xl:grid-cols-12 gap-4">
         {/* Left panel: appearance + lightweight data status */}
         <div className="xl:col-span-3 space-y-4">         
+          {/* Bottom: only Trait definitions (metrics removed) */}
+          <Card className="shadow-sm">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-xl">Trait definitions</CardTitle>
+            </CardHeader>
+            <CardContent>
+              {/* fixed height + scrollable + small text */}
+              <div className="h-[207px] overflow-y-auto pr-2 text-xs space-y-2">
+                <ul className="space-y-1">
+                  {TRAITS.map((t) => (
+                    <li key={t}>
+                      <span className="font-semibold">{t}:</span>{" "}
+                      <span className="font-normal">{TRAIT_DEFS[t]}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
           <Card className="shadow-sm">
             <CardHeader className="pb-2">
               <CardTitle className="text-xl flex items-center gap-2"><Circle className="h-5 w-5"/> Appearance</CardTitle>
@@ -487,26 +506,6 @@ export default function NeurodiversityMapMockup() {
                     ))}
                   </SelectContent>
                 </Select>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Bottom: only Trait definitions (metrics removed) */}
-          <Card className="shadow-sm">
-            <CardHeader className="pb-2">
-              <CardTitle className="text-xl">Trait definitions</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {/* fixed height + scrollable + small text */}
-              <div className="h-[207px] overflow-y-auto pr-2 text-xs space-y-2">
-                <ul className="space-y-1">
-                  {TRAITS.map((t) => (
-                    <li key={t}>
-                      <span className="font-semibold">{t}:</span>{" "}
-                      <span className="font-normal">{TRAIT_DEFS[t]}</span>
-                    </li>
-                  ))}
-                </ul>
               </div>
             </CardContent>
           </Card>
